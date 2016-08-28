@@ -1,3 +1,3 @@
 class ElevationSerializer < ActiveModel::Serializer
-  attributes :date, :value
+  attributes :date, :timestamp, :value
 end

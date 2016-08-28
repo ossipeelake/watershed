@@ -25,13 +25,17 @@ class ElevationService
 
   def self.parse(reading)
     return {
-      date: date_in_miliseconds(reading['Date']),
+      date: parse_date(reading['Date']),
+      timestamp: date_in_miliseconds(reading['Date']),
       value: reading['Observed'].to_f
     }
   end
 
+  def self.parse_date(date)
+    DateTime.strptime(date, '%m/%d/%Y %l:%M:%S %p')
+  end
+
   def self.date_in_miliseconds(date)
-    date = DateTime.strptime(date, '%m/%d/%Y %l:%M:%S %p')
-    date = date.to_time.to_i * 1000
+    parse_date(date).to_time.to_i
   end
 end

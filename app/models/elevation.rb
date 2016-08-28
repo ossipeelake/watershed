@@ -1,10 +1,11 @@
 class Elevation
   include ActiveModel::Serialization
 
-  attr_reader :date, :value
+  attr_reader :date, :timestamp, :value
 
   def initialize(attributes)
     @date = attributes[:date]
+    @timestamp = attributes[:timestamp]
     @value = attributes[:value]
   end
 
