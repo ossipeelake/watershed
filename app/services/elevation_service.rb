@@ -32,7 +32,7 @@ class ElevationService
   end
 
   def self.parse_date(date)
-    DateTime.strptime(date, '%m/%d/%Y %l:%M:%S %p')
+    DateTime.strptime(date, '%m/%d/%Y %l:%M:%S %p').in_time_zone('Eastern Time (US & Canada)')
   end
 
   def self.date_in_miliseconds(date)
