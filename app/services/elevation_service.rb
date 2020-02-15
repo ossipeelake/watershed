@@ -1,5 +1,7 @@
+require 'net/http'
+
 class ElevationService
-  API_URI = URI.parse('http://www4.des.state.nh.us/rivertraksearch/api/Search/')
+  API_URI = URI.parse('https://www4.des.state.nh.us/rivertraksearch/api/Search/')
   FORM_DATA = {
     :stationName      => 'OSSIPEE LK NR W OSSIPEE',
     :measTypeNum      => '40',
